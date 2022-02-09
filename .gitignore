@@ -1,2 +1,2 @@
-save_data/**/*
+save_data/data_100x100/*
 !.gitkeep

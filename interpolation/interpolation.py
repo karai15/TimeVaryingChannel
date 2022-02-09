@@ -201,6 +201,9 @@ def save_plot_mse(MSE_data, fdTsamp_max_list, tauFsamp_max_list, method_list):
             ax_fdTs[0, n_tauFs].grid()
             ax_fdTs[0, n_tauFs].legend(fontsize=pp["leg_ftz"])
 
+            # # test
+            # ax_fdTs[0, n_tauFs].set_ylim([0, 0.025])
+
     # MSE vs tauFs
     fig_tauFs, ax_tauFs = plt.subplots(1, N_fdTs, squeeze=False, figsize=(15, 3))
     for n_fdTs, fdTsamp_max in enumerate(fdTsamp_max_list):
@@ -288,15 +291,6 @@ if __name__ == '__main__':
         H_itpl_data = saveInst.H_itpl_data
         param = saveInst.param
         method_list = saveInst.method_list
-
-        #####################
-        # # test
-        # MSE_data[2, 4, 4, 1] = 0.01
-        test = MSE_data[:, 3, 1, :]
-        test[1, 4] = 0.01
-        test_avg = np.average(test, axis=1)
-        aaa = 1
-        #####################
 
     # データが保存されていない場合は補間手法を実行
     else:
